@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="370dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnllamarCaptacion"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/captacion"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="Captación"
+            android:textColor="#000000"
+            app:cornerRadius="4dp" />
+
+        <Button
+            android:id="@+id/btnllamarCamRomPre"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/camararompepresion"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="Camara Rompe Presión"
+            android:textColor="#000000"
+            app:cornerRadius="4dp" />
+
+        <Button
+            android:id="@+id/btnllamarReserCircu"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/tanquecircular"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="Reservorio Circular"
+            android:textColor="#000000"
+            app:cornerRadius="4dp" />
+
+        <Button
+            android:id="@+id/btnllamarReserRectan"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/tanquerectangular"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="Reservorio Rectángular"
+            android:textColor="#000000"
+            app:cornerRadius="4dp" />
+
+        <Button
+            android:id="@+id/btnllamarTuberias"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:drawableLeft="@drawable/pipe__1_"
+            android:drawableRight="@drawable/baseline_navigate_next_24"
+            android:gravity="left|center_vertical"
+            android:padding="10dp"
+            android:text="Tuberías"
+            android:textColor="#000000"
+            app:cornerRadius="4dp" />
+
+        <!-- TODO: Update blank fragment layout -->
+    </LinearLayout>
+</FrameLayout>
