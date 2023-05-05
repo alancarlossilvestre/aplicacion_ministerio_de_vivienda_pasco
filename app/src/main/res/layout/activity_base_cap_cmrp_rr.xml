@@ -3,12 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".calculosdesinfeccion.Captacion"
+    tools:context=".bases.base_cap_cmrp_rr"
 
     >
 
-    <include layout="@layout/actionbar_toolbar"/>
+<androidx.appcompat.widget.Toolbar
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:id="@+id/toolbar"
+    android:background="?attr/colorPrimary"
+    android:title="@string/app_name"
+
+    >
+
+</androidx.appcompat.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,53 +34,62 @@
         android:padding="10dp"
         android:background="@drawable/border"
     >
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
             android:text="Ingrese Altura"
-            android:textColor="#000000"
-            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
             />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputAlturaReserRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Ingrese Altura"
-            android:layout_margin="10dp"
+            android:hint="metros"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
             android:inputType="number"
+
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Ingrese Ancho"
-            android:textColor="#000000"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="13dp"
+            android:textStyle="bold"
             />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputAnchoReserRec"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Ingrese Ancho"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
             android:inputType="number"
+            android:hint="metros"
 
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="13dp"
             android:text="Ingrese Largo"
-            android:textColor="#000000" />
+            android:textStyle="bold"
+            />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputLargoReserRect"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:hint="Ingrese Largo"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:hint="metros"
             android:inputType="number"
             />
 
@@ -97,12 +117,18 @@
         android:id="@+id/resultadoVoloumenReserRectan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
          />
 
     <TextView
-        android:id="@+id/resultadoPesodeCloro_reserRectan"
+        android:id="@+id/resultadoPesoLitro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:gravity="center"
          />
     </LinearLayout>
     </LinearLayout>

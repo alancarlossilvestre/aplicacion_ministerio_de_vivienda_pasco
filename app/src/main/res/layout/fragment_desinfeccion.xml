@@ -3,14 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ffffff">
+    >
 
     <LinearLayout
-        android:layout_width="370dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:background="#ffffff"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="25dp"
+        android:paddingLeft="25dp"
+        android:layout_marginTop="15dp"
+        >
 
         <Button
             android:id="@+id/btnllamarCaptacion"
@@ -24,6 +26,7 @@
             android:padding="10dp"
             android:text="Captación"
             android:textColor="#000000"
+            android:textStyle="bold"
             app:cornerRadius="4dp" />
 
         <Button
@@ -38,7 +41,9 @@
             android:padding="10dp"
             android:text="Camara Rompe Presión"
             android:textColor="#000000"
-            app:cornerRadius="4dp" />
+            app:cornerRadius="4dp"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btnllamarReserCircu"
@@ -52,7 +57,9 @@
             android:padding="10dp"
             android:text="Reservorio Circular"
             android:textColor="#000000"
-            app:cornerRadius="4dp" />
+            app:cornerRadius="4dp"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btnllamarReserRectan"
@@ -66,7 +73,9 @@
             android:padding="10dp"
             android:text="Reservorio Rectángular"
             android:textColor="#000000"
-            app:cornerRadius="4dp" />
+            app:cornerRadius="4dp"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/btnllamarTuberias"
@@ -80,7 +89,8 @@
             android:padding="10dp"
             android:text="Tuberías"
             android:textColor="#000000"
-            app:cornerRadius="4dp" />
+            app:cornerRadius="4dp"
+            android:textStyle="bold"/>
 
         <!-- TODO: Update blank fragment layout -->
     </LinearLayout>

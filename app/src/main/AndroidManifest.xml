@@ -13,53 +13,53 @@
         android:theme="@style/Theme.Mv4"
         tools:targetApi="31">
         <activity
-            android:name=".calculosdesinfeccion.Tuberias"
+            android:name=".bases.base_t_rc"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".UI.MainActivity"
             >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".UI.MainActivity"
                 />
         </activity>
         <activity
-            android:name=".calculosdesinfeccion.ReservorioRectangular"
+            android:name=".bases.base_cap_cmrp_rr"
             android:exported="false"
-            android:parentActivityName=".MainActivity" >
+            android:parentActivityName=".UI.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".UI.MainActivity"
                 />
         </activity>
         <activity
-            android:name=".calculosdesinfeccion.ReservorioCircular"
+            android:name=".bases.ReservorioCircular"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".UI.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".UI.MainActivity"
                 />
         </activity>
         <activity
-            android:name=".calculosdesinfeccion.CamaraRompePresion"
+            android:name=".bases.CamaraRompePresion"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".UI.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".UI.MainActivity"
                 />
         </activity>
         <activity
-            android:name=".calculosdesinfeccion.Captacion"
+            android:name=".bases.Captacion"
             android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".UI.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"
+                android:value=".UI.MainActivity"
                 />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
