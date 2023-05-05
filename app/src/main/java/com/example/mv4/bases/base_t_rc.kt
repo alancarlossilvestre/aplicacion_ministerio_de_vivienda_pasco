@@ -53,7 +53,7 @@ class base_t_rc : AppCompatActivity() {
         val myLinearLayout = findViewById<LinearLayout>(R.id.linearResultadorc_v)
         if (linearLayoutVisible) { // comprobar si el layout está visible
             myLinearLayout.visibility = View.VISIBLE
-            linearLayoutVisible = false // cambiar el estado del layout a invisible
+            linearLayoutVisible = true // cambiar el estado del layout a invisible
         } else {
             myLinearLayout.visibility = View.GONE
         }

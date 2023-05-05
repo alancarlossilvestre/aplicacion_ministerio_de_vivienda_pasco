@@ -55,15 +55,14 @@ class base_cap_cmrp_rr : AppCompatActivity() {
         }
 
     }
-
+    private var linearLayoutVisible = true
     fun mostrarLinear(){
         val myLinearLayout = findViewById<LinearLayout>(R.id.linearResultado)
-        if (myLinearLayout.visibility == View.GONE) {
+        if (linearLayoutVisible) { // comprobar si el layout está visible
             myLinearLayout.visibility = View.VISIBLE
+            linearLayoutVisible = true // cambiar el estado del layout a invisible
         } else {
             myLinearLayout.visibility = View.GONE
         }
-    }
-
-
+      }
 }
