@@ -1,5 +1,8 @@
 package com.example.mv4.bases
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -46,7 +49,9 @@ class base_t_rc : AppCompatActivity() {
 
             }
         }
-    }
+
+
+}
     private var linearLayoutVisible = true
 
     fun mostrarLinear(){

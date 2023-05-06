@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".bases.base_t_rc">
 
@@ -87,7 +88,7 @@
             android:orientation="vertical"
             android:padding="10dp"
             android:background="@drawable/border"
-            android:visibility="gone"
+
             >
 
     <TextView
@@ -97,6 +98,31 @@
         android:textStyle="bold"
         android:textAlignment="center"
         android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="#5A5959"
+                    android:scaleType="fitCenter" />
+
+                <Button
+                    android:id="@+id/botonCopiar_t_rc"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_border"
+                    android:drawableTop="@drawable/baseline_content_copy_24"
+
+                    />
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

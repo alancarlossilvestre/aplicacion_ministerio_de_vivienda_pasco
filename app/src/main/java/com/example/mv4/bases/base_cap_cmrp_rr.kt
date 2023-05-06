@@ -1,5 +1,8 @@
 package com.example.mv4.bases
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -45,7 +48,7 @@ class base_cap_cmrp_rr : AppCompatActivity() {
                 val ancho = anchoin.text.toString().toDouble()
                 val largo = largoin.text.toString().toDouble()
                 val calculo = captacion_CamRompPres_ReservorioRectan(altura, ancho, largo)
-                resultado.text = "Resultado: ${calculo.toString()}"
+                resultado.text = "${calculo.toString()} m3"
                 val l = mostrar_resultado_volumen(calculo)
                 resultadoLitro.text = "${l.toString()} Litros"
                 ocultarTecladoUI.ocultarTeclado(this)
@@ -54,7 +57,19 @@ class base_cap_cmrp_rr : AppCompatActivity() {
             }
         }
 
+
+        val btnCopy = findViewById<Button>(R.id.botonCopiar)
+        btnCopy.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val text = "***Volumen Captación***\n${resultado.text}\n${resultadoLitro.text}"
+            clipboard.setPrimaryClip(ClipData.newPlainText("text", text))
+            Toast.makeText(this, "Copiado al portapapeles", Toast.LENGTH_SHORT).show()
+        }
+
     }
+
+
+
     private var linearLayoutVisible = true
     fun mostrarLinear(){
         val myLinearLayout = findViewById<LinearLayout>(R.id.linearResultado)
