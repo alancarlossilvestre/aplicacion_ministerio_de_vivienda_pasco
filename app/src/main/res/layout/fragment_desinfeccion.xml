@@ -25,7 +25,6 @@
             android:gravity="left|center_vertical"
             android:padding="10dp"
             android:text="Captación"
-            android:textColor="#000000"
             android:textStyle="bold"
             app:cornerRadius="4dp" />
 
@@ -40,7 +39,6 @@
             android:gravity="left|center_vertical"
             android:padding="10dp"
             android:text="Camara Rompe Presión"
-            android:textColor="#000000"
             app:cornerRadius="4dp"
             android:textStyle="bold"
             />
@@ -56,7 +54,6 @@
             android:gravity="left|center_vertical"
             android:padding="10dp"
             android:text="Reservorio Circular"
-            android:textColor="#000000"
             app:cornerRadius="4dp"
             android:textStyle="bold"
             />
@@ -72,7 +69,6 @@
             android:gravity="left|center_vertical"
             android:padding="10dp"
             android:text="Reservorio Rectángular"
-            android:textColor="#000000"
             app:cornerRadius="4dp"
             android:textStyle="bold"
             />
@@ -88,7 +84,6 @@
             android:gravity="left|center_vertical"
             android:padding="10dp"
             android:text="Tuberías"
-            android:textColor="#000000"
             app:cornerRadius="4dp"
             android:textStyle="bold"/>
 

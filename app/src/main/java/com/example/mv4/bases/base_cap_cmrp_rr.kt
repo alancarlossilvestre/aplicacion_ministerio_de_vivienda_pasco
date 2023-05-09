@@ -32,9 +32,9 @@ class base_cap_cmrp_rr : AppCompatActivity() {
         val alturain = findViewById<TextInputEditText>(R.id.inputAlturaReserRec)
         val anchoin = findViewById<TextInputEditText>(R.id.inputAnchoReserRec)
         val largoin =  findViewById<TextInputEditText>(R.id.inputLargoReserRect)
-        val resultado = findViewById<TextView>(R.id.resultadoVoloumenReserRectan)
-        val resultadoLitro = findViewById<TextView>(R.id.resultadoPesoLitro)
+        val mostrarResultadoVol = findViewById<TextView>(R.id.resultadoVolumen_cap_cmrp_rr)
         val buttoncalc = findViewById<Button>(R.id.buttonCalcReserRectan)
+        val mostrarPesoCloro = findViewById<TextView>(R.id.resultadoPesoCloro)
 
         buttoncalc.setOnClickListener {
             if (alturain.text.isNullOrEmpty() || anchoin.text.isNullOrEmpty() || largoin.text.isNullOrEmpty()) {
@@ -48,27 +48,31 @@ class base_cap_cmrp_rr : AppCompatActivity() {
                 val ancho = anchoin.text.toString().toDouble()
                 val largo = largoin.text.toString().toDouble()
                 val calculo = captacion_CamRompPres_ReservorioRectan(altura, ancho, largo)
-                resultado.text = "${calculo.toString()} m3"
+
                 val l = mostrar_resultado_volumen(calculo)
-                resultadoLitro.text = "${l.toString()} Litros"
+                mostrarResultadoVol.text = "Volumen de ${toolbarTitle}\n\n${calculo.toString()} m3 \n${l.toString()} Litros"
+
+                //calcular el resultado de peso de cloro a disolver
+                val calculoPesoCloro = peso_a_disolver()
+                calculoPesoCloro.calcularPesoCloro(calculo, supportActionBar?.title.toString())
+                val resultadoPesoCloro = calculoPesoCloro.getResultado()
+                val mostrarPesoCloroGramos = resultadoPesoCloro*1000
+                mostrarPesoCloro.text = "Peso de Cloro a Disolver\n\n%.2f Gramos\n%.2f Kilogramos".format(mostrarPesoCloroGramos, resultadoPesoCloro)
+
+                //mostrarPesoCloro.text = "Peso de Cloro a Disolver \n\n${mostrarPesoCloroGramos.toString()} Gramos \n${resultadoPesoCloro.toString()} Kilogramos"
+
                 ocultarTecladoUI.ocultarTeclado(this)
                 mostrarLinear()
-
             }
         }
-
 
         val btnCopy = findViewById<Button>(R.id.botonCopiar)
         btnCopy.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-            val text = "***Volumen Captación***\n${resultado.text}\n${resultadoLitro.text}"
+            val text = "***********\n${mostrarResultadoVol.text}\n\n***********\n${mostrarPesoCloro.text}"
             clipboard.setPrimaryClip(ClipData.newPlainText("text", text))
-            Toast.makeText(this, "Copiado al portapapeles", Toast.LENGTH_SHORT).show()
         }
-
     }
-
-
 
     private var linearLayoutVisible = true
     fun mostrarLinear(){

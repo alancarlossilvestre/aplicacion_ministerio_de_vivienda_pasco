@@ -25,7 +25,6 @@ class base_t_rc : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_base_t_rc)
 
-
         // Obtener el título del toolbar del intent
         val toolbarTitle = intent.getStringExtra("titulo_toolbar")
 
@@ -36,21 +35,27 @@ class base_t_rc : AppCompatActivity() {
         val longitudin =  findViewById<TextInputEditText>(R.id.inputLongitudTuberia)
         val diametroin = findViewById<TextInputEditText>(R.id.inputDiametroTuberia)
         val calcular = findViewById<Button>(R.id.buttonCalcTuberias)
-        val resultadot = findViewById<TextView>(R.id.resultadoVolumenTuberia)
+        val mostrarResultadoVol = findViewById<TextView>(R.id.resultadoVolumenTuberia)
+        val mostrarPesoCloro =  findViewById<TextView>(R.id.resultadoPesoCloro_T_RC)
 
         calcular.setOnClickListener {
             if (longitudin.text.isNullOrEmpty() || diametroin.text.isNullOrEmpty()) {
                 Toast.makeText(this, "Tiene que rellenar todos los datos", Toast.LENGTH_SHORT)
                     .show()
             }else{
-            rc_t.nombre_toolbar(supportActionBar?.title.toString(),longitudin, diametroin,resultadot)
+                rc_t.nombre_toolbar(supportActionBar?.title.toString(),longitudin, diametroin,mostrarResultadoVol,mostrarPesoCloro)
+
                 ocultarTecladoUI.ocultarTeclado(this)
                 mostrarLinear()
+            }
+            val btnCopy = findViewById<Button>(R.id.botonCopiar_t_rc)
+            btnCopy.setOnClickListener {
+                val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                val text = "***********\n${mostrarResultadoVol.text}\n\n***********\n${mostrarPesoCloro.text}"
+                clipboard.setPrimaryClip(ClipData.newPlainText("text", text))
 
             }
         }
-
-
 }
     private var linearLayoutVisible = true
 
@@ -63,5 +68,4 @@ class base_t_rc : AppCompatActivity() {
             myLinearLayout.visibility = View.GONE
         }
     }
-
 }
