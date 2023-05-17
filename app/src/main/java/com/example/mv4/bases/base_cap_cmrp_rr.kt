@@ -50,7 +50,8 @@ class base_cap_cmrp_rr : AppCompatActivity() {
                 val calculo = captacion_CamRompPres_ReservorioRectan(altura, ancho, largo)
 
                 val l = mostrar_resultado_volumen(calculo)
-                mostrarResultadoVol.text = "Volumen de ${toolbarTitle}\n\n${calculo.toString()} m3 \n${l.toString()} Litros"
+                mostrarResultadoVol.text = "Volumen de ${toolbarTitle}\n\n %.2f m3 \n%.2f Litros".format(calculo,l)
+
 
                 //calcular el resultado de peso de cloro a disolver
                 val calculoPesoCloro = peso_a_disolver()

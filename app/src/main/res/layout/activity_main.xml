@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".UI.MainActivity">
 
-    <include layout="@layout/tollbarprincipal"/>
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
