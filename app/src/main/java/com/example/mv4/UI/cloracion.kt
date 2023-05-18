@@ -27,7 +27,6 @@ class cloracion : Fragment() {
             val intent = Intent(requireContext(), AutocompensanteActivity::class.java)
             intent.putExtra("titulo_toolbar", "Autocompensante")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
         }
         // Inflate the layout for this fragment
         return view

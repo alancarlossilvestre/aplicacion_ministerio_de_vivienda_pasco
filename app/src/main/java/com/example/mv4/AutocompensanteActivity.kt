@@ -1,5 +1,8 @@
 package com.example.mv4
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -45,7 +48,6 @@ class AutocompensanteActivity : AppCompatActivity() {
         sumButton = findViewById(R.id.buttonCalCaudalAgua)
         resultpromedioTextView = findViewById(R.id.resultadoTiempoPromedio)
         resultadoCaudal =  findViewById(R.id.resultadoCaudal)
-
         VolRecipiente  = findViewById(R.id.inputVolRecipCaudalAutocom)
 
         inputManager = InputManager(container)
@@ -60,19 +62,39 @@ class AutocompensanteActivity : AppCompatActivity() {
 
         sumButton.setOnClickListener {
             val average = calculaCaudar.calculateAverage(container)
-            val sum = calculaCaudar.calculateSum(container)
             resultpromedioTextView.text = "Tiempo Promedio:\n %.2f Segundos".format(average)
             val Litros = VolRecipiente.text.toString().toDoubleOrNull()
-
+            ocultarTecladoUI.ocultarTeclado(this)
+            mostrarLinear()
             if (Litros != null) {
                 val result = Litros / average
-                resultadoCaudal.text = "Caudal: \n %.2f L/Seg" .format(result)
+                resultadoCaudal.text = "Caudal: \n %.2f l/seg" .format(result)
+                ocultarTecladoUI.ocultarTeclado(this)
+                mostrarLinear()
             } else {
                 resultadoCaudal.text = "Ingrese un valor válido"
+                ocultarTecladoUI.ocultarTeclado(this)
+                mostrarLinear()
             }
 
+        }
+        val btnCopy = findViewById<Button>(R.id.botonCopiarcaudal)
+        btnCopy.setOnClickListener {
+            val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+            val text = "***********\n${resultpromedioTextView.text}\n\n***********\n${resultadoCaudal.text}"
+            clipboard.setPrimaryClip(ClipData.newPlainText("text", text))
         }
 
     }
 
+    private var linearLayoutVisible = true
+    fun mostrarLinear(){
+        val myLinearLayout = findViewById<LinearLayout>(R.id.linearResultadocaudal)
+        if (linearLayoutVisible) { // comprobar si el layout está visible
+            myLinearLayout.visibility = View.VISIBLE
+            linearLayoutVisible = true // cambiar el estado del layout a invisible
+        } else {
+            myLinearLayout.visibility = View.GONE
+        }
+    }
 }

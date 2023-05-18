@@ -115,15 +115,16 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearResultado"
+        android:id="@+id/linearResultadocaudal"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
         android:background="@drawable/border"
+        android:visibility="gone"
         >
-        <!--- android:visibility="gone"-->
+        <!---->
 
 
         <TextView
@@ -155,7 +156,7 @@
                 android:scaleType="fitCenter" />
 
             <Button
-                android:id="@+id/botonCopiar"
+                android:id="@+id/botonCopiarcaudal"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/circle_border"

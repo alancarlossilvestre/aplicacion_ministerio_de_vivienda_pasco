@@ -38,36 +38,30 @@ class desinfeccion : Fragment() {
             val intent = Intent(vista.context, base_cap_cmrp_rr::class.java)
             intent.putExtra("titulo_toolbar", "Captación")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
 
         }
         botonCamRomPre?.setOnClickListener {
             val intent = Intent(vista.context, base_cap_cmrp_rr::class.java)
             intent.putExtra("titulo_toolbar", "Cámara Rompe Presión")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
 
         }
         botonReserRect?.setOnClickListener {
             val intent = Intent(vista.context, base_cap_cmrp_rr::class.java)
             intent.putExtra("titulo_toolbar", "Reservorio Rectángular")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
         }
 
         botonReserCirc?.setOnClickListener {
             val intent = Intent(vista.context, base_t_rc::class.java)
             intent.putExtra("titulo_toolbar", "Reservorio Circular")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
-
         }
 
         botonTuberias?.setOnClickListener {
             val intent = Intent(vista.context,base_t_rc::class.java)
             intent.putExtra("titulo_toolbar", "Tuberías")
             startActivity(intent)
-            activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_in_right)
         }
 
         return vista
