@@ -35,6 +35,8 @@ class base_cap_cmrp_rr : AppCompatActivity() {
         val mostrarResultadoVol = findViewById<TextView>(R.id.resultadoVolumen_cap_cmrp_rr)
         val buttoncalc = findViewById<Button>(R.id.buttonCalcReserRectan)
         val mostrarPesoCloro = findViewById<TextView>(R.id.resultadoPesoCloro)
+        //animacion
+
 
         buttoncalc.setOnClickListener {
             if (alturain.text.isNullOrEmpty() || anchoin.text.isNullOrEmpty() || largoin.text.isNullOrEmpty()) {
