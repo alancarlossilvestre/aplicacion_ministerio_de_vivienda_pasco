@@ -3,17 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".AutocompensanteActivity">
 
+
+
+
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:id="@+id/toolbar"
         android:background="?attr/colorPrimary"
-        android:title="@string/app_name"
-        />
+        android:title="@string/app_name" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -76,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Toma 1"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 />
 
         </LinearLayout>
@@ -87,28 +92,95 @@
             >
         <ImageView
             android:id="@+id/add"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/baseline_add_24"
             android:layout_marginRight="30dp"
             />
         <ImageView
             android:id="@+id/quitar"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/baseline_delete_24"
             android:layout_marginLeft="30dp"
             />
         </LinearLayout>
         <Button
-            android:id="@+id/buttonCalcTuberias"
+            android:id="@+id/buttonCalCaudalAgua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Calcular" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearResultado"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        >
+        <!--- android:visibility="gone"-->
+
+
+        <TextView
+            android:id="@+id/resultadoTiempoPromedio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15dp"
+
+            />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="#5A5959"
+                android:scaleType="fitCenter" />
+
+            <Button
+                android:id="@+id/botonCopiar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circle_border"
+                android:drawableTop="@drawable/baseline_content_copy_24"
+
+                />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/resultadoCaudal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
     </LinearLayout>
 
+    </ScrollView>
 
 </LinearLayout>
