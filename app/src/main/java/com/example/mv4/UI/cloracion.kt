@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.mv4.AutocompensanteActivity
+import com.example.mv4.calculo_caudalActivity
 import com.example.mv4.R
 
 
@@ -24,8 +24,8 @@ class cloracion : Fragment() {
         val button = view.findViewById<Button>(R.id.btnautocompensant)
         button.setOnClickListener {
             // Iniciar la nueva actividad
-            val intent = Intent(requireContext(), AutocompensanteActivity::class.java)
-            intent.putExtra("titulo_toolbar", "Autocompensante")
+            val intent = Intent(requireContext(), calculo_caudalActivity::class.java)
+            intent.putExtra("titulo_toolbar", "Calculo Caudal")
             startActivity(intent)
         }
         // Inflate the layout for this fragment

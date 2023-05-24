@@ -3,23 +3,21 @@ package com.example.mv4
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatImageView
-import androidx.appcompat.widget.Toolbar
+import com.example.mv4.autocompensante.calculo_autcompensante
 import com.example.mv4.caudalautocompensante.InputManager
 import com.example.mv4.caudalautocompensante.calculaCaudar
 import com.google.android.material.textfield.TextInputEditText
 
 
-class AutocompensanteActivity : AppCompatActivity() {
+class calculo_caudalActivity : AppCompatActivity() {
     private lateinit var container: LinearLayout
     private lateinit var addButton: AppCompatImageView
     private lateinit var inputManager: InputManager
@@ -33,7 +31,7 @@ class AutocompensanteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_autocompensante)
+        setContentView(R.layout.activity_calculo_caudal)
         // Obtener el título del toolbar del intent
         val toolbarTitle = intent.getStringExtra("titulo_toolbar")
 
@@ -69,13 +67,23 @@ class AutocompensanteActivity : AppCompatActivity() {
             if (Litros != null) {
                 val result = Litros / average
                 resultadoCaudal.text = "Caudal: \n %.2f l/seg" .format(result)
+                val intent = Intent(this,  calculo_autcompensante::class.java)
                 ocultarTecladoUI.ocultarTeclado(this)
                 mostrarLinear()
+                val btnIrCalculoAutocom = findViewById<Button>(R.id.buttonIrCalculoAutocom)
+                btnIrCalculoAutocom.setOnClickListener {
+                    val intent = Intent(this, calculo_autcompensante::class.java)
+                    intent.putExtra("resultadoCaudal", result)
+                    intent.putExtra("titulo_toolbar", "Calculo Autocompensante")
+                    startActivity(intent)
+
+                }
             } else {
                 resultadoCaudal.text = "Ingrese un valor válido"
                 ocultarTecladoUI.ocultarTeclado(this)
                 mostrarLinear()
             }
+
 
         }
         val btnCopy = findViewById<Button>(R.id.botonCopiarcaudal)
