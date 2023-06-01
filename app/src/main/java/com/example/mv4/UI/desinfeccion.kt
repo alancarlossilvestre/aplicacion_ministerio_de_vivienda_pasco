@@ -7,17 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.cardview.widget.CardView
 import com.example.mv4.R
 import com.example.mv4.bases.base_cap_cmrp_rr
 import com.example.mv4.bases.base_t_rc
 
 class desinfeccion : Fragment() {
 
-    var botonCapt: Button? = null
-    var botonCamRomPre: Button? = null
-    var botonReserCirc: Button? = null
-    var botonReserRect: Button? = null
-    var botonTuberias: Button? = null
+    var botonCapt: CardView? = null
+    var botonCamRomPre: CardView? = null
+    var botonReserCirc: CardView? = null
+    var botonReserRect: CardView? = null
+    var botonTuberias: CardView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
